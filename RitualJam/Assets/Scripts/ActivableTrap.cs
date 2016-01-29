@@ -6,7 +6,7 @@ public class ActivableTrap : MonoBehaviour {
 	// Use this for initialization
     public enum trapTypes { Spikes,Hole,Pusher,Boulder}
 
-    public  GameObject spikes;
+    public GameObject spikes;
     public GameObject hole;
     public GameObject pusher;
     public GameObject boulder;

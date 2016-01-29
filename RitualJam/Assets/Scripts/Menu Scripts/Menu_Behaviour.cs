@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Menu_Behaviour : MonoBehaviour {
 	//Attributes
-	public GameObject confirmCanvas;
+	public GameObject confirmPanel;
 
 	// Use this for initialization
 	void Awake() {
@@ -36,7 +36,7 @@ public class Menu_Behaviour : MonoBehaviour {
 
 	public void OnQuitClick()
 	{
-		confirmCanvas.SetActive (true);
+		confirmPanel.SetActive (true);
 	}
 
 	public void OnBackClick()
@@ -51,6 +51,6 @@ public class Menu_Behaviour : MonoBehaviour {
 
 	public void OnNoClick()
 	{
-		confirmCanvas.SetActive (false);
+		confirmPanel.SetActive (false);
 	}
 }
