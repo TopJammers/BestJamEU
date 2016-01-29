@@ -62,14 +62,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\ActivableTrap.cs" />
-    <Compile Include="Assets\Boulder.cs" />
-    <Compile Include="Assets\CompleteController.cs" />
-    <Compile Include="Assets\CompletePlayerController.cs" />
-    <Compile Include="Assets\GroundHole.cs" />
-    <Compile Include="Assets\GroundSpikes.cs" />
-    <Compile Include="Assets\TrapTrigger.cs" />
-    <Compile Include="Assets\WallSpikes.cs" />
+    <Compile Include="Assets\Scripts\ActivableTrap.cs" />
+    <Compile Include="Assets\Scripts\Boulder.cs" />
+    <Compile Include="Assets\Scripts\CompleteController.cs" />
+    <Compile Include="Assets\Scripts\CompletePlayerController.cs" />
+    <Compile Include="Assets\Scripts\GroundHole.cs" />
+    <Compile Include="Assets\Scripts\GroundSpikes.cs" />
+    <Compile Include="Assets\Scripts\TrapTrigger.cs" />
+    <Compile Include="Assets\Scripts\WallSpikes.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2015\UnityVS.CSharp.targets" />
 </Project>
