@@ -14,22 +14,22 @@ public class PlayerController : MonoBehaviour {
 	}
 
 	public void MoveUp () {
-
+		Debug.Log("arriba");
 	}
 
 	public void MoveDown () {
-
+		Debug.Log("abajo");
 	}
 
 	public void MoveLeft () {
-
+		Debug.Log("izq");
 	}
 
 	public void MoveRight () {
-
+		Debug.Log("der");
 	}
 
 	public void Stop () {
-
+		Debug.Log("para");
 	}
 }
