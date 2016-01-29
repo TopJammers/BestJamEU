@@ -6,6 +6,7 @@ public class Console : MonoBehaviour {
 	public Text consoleText;
 	private string command;
 	public GameObject player;
+    public GameObject PlayerManager;
 
 	// Use this for initialization
 	void Start () {
@@ -39,20 +40,28 @@ public class Console : MonoBehaviour {
 	void ExecUserCommand () {
 		switch (command.ToLower()) {
 		case "up":
-			player.GetComponent<PlayerController>().MoveUp();
+                PlayerManager.GetComponent<GridMove>().isMoving = false;
+                PlayerManager.GetComponent<GridMove>().setComponents(new Vector2(0, 1));
+               
 			break;
-		case "down":
-			player.GetComponent<PlayerController>().MoveDown();
-			break;
+		//case "down":
+			//player.GetComponent<PlayerController>().MoveDown();
+			//break;
 		case "left":
-			player.GetComponent<PlayerController>().MoveLeft();
-			break;
+                PlayerManager.GetComponent<GridMove>().isMoving = false;
+                PlayerManager.GetComponent<GridMove>().setComponents(new Vector2(-1, 0));
+               
+                break;
 		case "right":
-			player.GetComponent<PlayerController>().MoveRight();
-			break;
+                PlayerManager.GetComponent<GridMove>().isMoving = false;
+                PlayerManager.GetComponent<GridMove>().setComponents(new Vector2(1, 0));
+               
+                break;
 		case "stop":
-			player.GetComponent<PlayerController>().Stop();
-			break;
+                PlayerManager.GetComponent<GridMove>().isMoving = true;
+                PlayerManager.GetComponent<GridMove>().setComponents(new Vector2(0, 0));
+               
+                break;
 		}
 	}
 }
