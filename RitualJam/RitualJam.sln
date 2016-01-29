@@ -1,7 +1,16 @@
+<<<<<<< HEAD
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2008
 
 Project("{833DE11F-99F3-B9F8-1DCD-B405CD232504}") = "RitualJam", "Assembly-CSharp.csproj", "{0311DB13-9B72-A22B-D880-BA8D268B4402}"
+=======
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2015
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RitualJam.CSharp", "RitualJam.CSharp.csproj", "{CC9F25A5-3417-F26F-10DE-8CF443333A5F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RitualJam.CSharp.Editor", "RitualJam.CSharp.Editor.csproj", "{2DD9F499-7AEF-52F0-037A-FF01D0AB0F59}"
+>>>>>>> Trampas_y_mecanicas
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -9,14 +18,26 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+<<<<<<< HEAD
 		{0311DB13-9B72-A22B-D880-BA8D268B4402}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{0311DB13-9B72-A22B-D880-BA8D268B4402}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0311DB13-9B72-A22B-D880-BA8D268B4402}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0311DB13-9B72-A22B-D880-BA8D268B4402}.Release|Any CPU.Build.0 = Release|Any CPU
+=======
+		{CC9F25A5-3417-F26F-10DE-8CF443333A5F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CC9F25A5-3417-F26F-10DE-8CF443333A5F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CC9F25A5-3417-F26F-10DE-8CF443333A5F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CC9F25A5-3417-F26F-10DE-8CF443333A5F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2DD9F499-7AEF-52F0-037A-FF01D0AB0F59}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2DD9F499-7AEF-52F0-037A-FF01D0AB0F59}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2DD9F499-7AEF-52F0-037A-FF01D0AB0F59}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2DD9F499-7AEF-52F0-037A-FF01D0AB0F59}.Release|Any CPU.Build.0 = Release|Any CPU
+>>>>>>> Trampas_y_mecanicas
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
+<<<<<<< HEAD
 		GlobalSection(MonoDevelopProperties) = preSolution
 		StartupItem = Assembly-CSharp.csproj
 		Policies = $0
@@ -37,4 +58,6 @@ Global
 		$3.scope = text/plain
 	EndGlobalSection
 
+=======
+>>>>>>> Trampas_y_mecanicas
 EndGlobal
