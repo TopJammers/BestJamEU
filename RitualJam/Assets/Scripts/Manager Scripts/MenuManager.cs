@@ -1,9 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class MenuManager : MonoBehaviour {
 	//Attributes
 	public GameObject confirmPanel;
+	private bool streamingMode = false;
 	private static MenuManager instance = null;
 
 	// Use this for initialization
@@ -20,8 +22,6 @@ public class MenuManager : MonoBehaviour {
 		//Singleton pattern
 		if (instance == null) {
 			instance = this;
-		} else if (instance != this) {
-			Destroy(gameObject);
 		}
 		DontDestroyOnLoad (gameObject);
 	}
@@ -29,12 +29,12 @@ public class MenuManager : MonoBehaviour {
 	//Public methods
 	public void OnSettingsClick()
 	{
-		Application.LoadLevel (1);
+		SceneManager.LoadScene ("Settings Scene", LoadSceneMode.Single);
 	}
 
 	public void OnCreditsClick()
 	{
-		Application.LoadLevel (2);
+		SceneManager.LoadScene ("Credits Scene", LoadSceneMode.Single);
 	}
 
 	public void OnPlayClick()
@@ -48,7 +48,7 @@ public class MenuManager : MonoBehaviour {
 
 	public void OnBackClick()
 	{
-		Application.LoadLevel (0);
+		SceneManager.LoadScene ("Menu Scene", LoadSceneMode.Single);
 	}
 
 	public void OnYesClick()
@@ -59,5 +59,15 @@ public class MenuManager : MonoBehaviour {
 	public void OnNoClick()
 	{
 		confirmPanel.SetActive (false);
+	}
+
+	public void OnStreamingToggleChange()
+	{
+		streamingMode = !streamingMode;
+	}
+
+	public bool IsStreamingModeOn()
+	{
+		return streamingMode;
 	}
 }
