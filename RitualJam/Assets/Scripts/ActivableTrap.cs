@@ -12,6 +12,8 @@ public class ActivableTrap : MonoBehaviour {
     public GameObject boulder;
 
     private GameObject trap;
+	GameObject tramp;
+	Animator trap_anim;
 
     public trapTypes trapType;
 	void Start () {
@@ -47,6 +49,8 @@ public class ActivableTrap : MonoBehaviour {
 
     public void createTrap()
     {   
-        Instantiate(trap, this.transform.position, this.transform.rotation);
+		tramp = (GameObject)Instantiate(trap, this.transform.position, this.transform.rotation);
+		trap_anim = tramp.GetComponent<Animator>();
+		trap_anim.SetBool("Spikes",true);
     }
 }

@@ -22,32 +22,35 @@ class GridMove : MonoBehaviour
     public GameObject consolePrefab;
     private Console console;
     private string command;
-
+	private bool isDead;
 
     //private string inputCommand;
 
     void Start()
     {
         console = consolePrefab.GetComponent<Console>();
-
+		isDead = false;
     }
 
     public void Update()
     {
-        if (!isMoving) // Para moverse hay que activar el movimiento
-        {
+		if (!isDead) {
+			
+	        if (!isMoving) // Para moverse hay que activar el movimiento
+	        {
 
-            // input = new Vector2(componentA, componentB);
-            //input = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
-            command = console.getActiveCommand();
-            
-            if (!command.ToUpper().Equals("STOP"))
-            {
-                setMovement(command);
-                Debug.Log("A moverse");
-                StartCoroutine(move(transform));
-            }
-        }
+	            // input = new Vector2(componentA, componentB);
+	            //input = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
+	            command = console.getActiveCommand();
+	            
+	            if (!command.ToUpper().Equals("STOP"))
+	            {
+	                setMovement(command);
+	                Debug.Log("A moverse");
+	                StartCoroutine(move(transform));
+	            }
+	        }
+		}
     }
 
     public IEnumerator move(Transform transform)
@@ -104,4 +107,8 @@ class GridMove : MonoBehaviour
                 break;
         }
     }
+
+	public void setIsDead(bool dead) {
+		isDead = dead;
+	}
 }
