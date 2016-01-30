@@ -10,6 +10,7 @@ public class Console : MonoBehaviour {
 	public GameObject player;
 	public int flickerTime;
 	public string prompt;
+	public bool controlRemoto;
 
 	private string command;
 	private int time;
@@ -24,6 +25,9 @@ public class Console : MonoBehaviour {
 		consoleText_2.text = "";
 		time = 0;
 		promptShown = false;
+		if (controlRemoto) {
+			InvokeRepeating("ReadTwitchCommand", 0, 1);
+		}
 	}
 
 	void FixedUpdate () {
@@ -37,45 +41,34 @@ public class Console : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		foreach (char c in Input.inputString) {
-			if (c == "\b"[0]) {
-				// User wants to delete
-				if (command.Length > 0) {
-					consoleText.text = consoleText.text.Substring(0, consoleText.text.Length - 1);
-					command = command.Substring(0, command.Length - 1);
-				}
-			} else {
-				if (c == "\n"[0] || c == "\r"[0]) {
-					// User entered command
-					Debug.Log("User entered: " + command);
-					ExecUserCommand();
-					ManagePreviousCommands();
-					command = "";
-					consoleText.text = "";
-				} else {
-					command += c;
-					if ((promptShown) && (consoleText.text.Length > 0)) {
+		if (!controlRemoto) {
+			foreach (char c in Input.inputString) {
+				if (c == "\b"[0]) {
+					// User wants to delete
+					if (command.Length > 0) {
 						consoleText.text = consoleText.text.Substring(0, consoleText.text.Length - 1);
-						consoleText.text += c;
-						consoleText.text += "_";
+						command = command.Substring(0, command.Length - 1);
+					}
+				} else {
+					if (c == "\n"[0] || c == "\r"[0]) {
+						// User entered command
+						Debug.Log("User entered: " + command);
+						ExecUserCommand();
+						ManagePreviousCommands();
+						command = "";
+						consoleText.text = "";
 					} else {
-						consoleText.text += c;
+						command += c;
+						if ((promptShown) && (consoleText.text.Length > 0)) {
+							consoleText.text = consoleText.text.Substring(0, consoleText.text.Length - 1);
+							consoleText.text += c;
+							consoleText.text += "_";
+						} else {
+							consoleText.text += c;
+						}
 					}
 				}
 			}
-		}
-	}
-
-	void FlickerChange () {
-		promptShown = !promptShown;
-		FlickerUpdate();
-	}
-
-	void FlickerUpdate () {
-		if (promptShown) {
-			consoleText.text += "_";
-		} else if (consoleText.text.Length > 0) {
-			consoleText.text = consoleText.text.Substring(0, consoleText.text.Length - 1);
 		}
 	}
 
@@ -86,7 +79,8 @@ public class Console : MonoBehaviour {
 			player.GetComponent<GridMove>().isMoving = false;
 			break;
 		case "down":
-			player.GetComponent<PlayerController>().MoveDown();
+			player.GetComponent<GridMove>().setComponents(new Vector2(0,-1));
+			player.GetComponent<GridMove>().isMoving = false;
 			break;
 		case "left":
 			player.GetComponent<GridMove>().setComponents(new Vector2(-1,0));
@@ -103,9 +97,27 @@ public class Console : MonoBehaviour {
 		}
 	}
 
+	void FlickerChange () {
+		promptShown = !promptShown;
+		FlickerUpdate();
+	}
+
+	void FlickerUpdate () {
+		if (promptShown) {
+			consoleText.text += "_";
+		} else if (consoleText.text.Length > 0) {
+			consoleText.text = consoleText.text.Substring(0, consoleText.text.Length - 1);
+		}
+	}
+
 	void ManagePreviousCommands () {
 		consoleText_2.text = consoleText_1.text;
 		consoleText_1.text = command;
 		FlickerUpdate();
+	}
+
+	void ReadTwitchCommand () {
+		// Leer el comando de Twitch y almacenarlo en command
+		ExecUserCommand();
 	}
 }
