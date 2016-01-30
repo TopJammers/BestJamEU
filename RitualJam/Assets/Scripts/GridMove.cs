@@ -19,17 +19,31 @@ class GridMove : MonoBehaviour
     private Vector3 endPosition;
     private float t;
     private float factor;
+    public GameObject consolePrefab;
+    private Console console;
+    private string command;
+
+
+    //private string inputCommand;
+
+    void Start()
+    {
+        console = consolePrefab.GetComponent<Console>();
+
+    }
 
     public void Update()
     {
         if (!isMoving) // Para moverse hay que activar el movimiento
         {
-           
-           // input = new Vector2(componentA, componentB);
-           //input = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
 
-            if (input != Vector2.zero)
+            // input = new Vector2(componentA, componentB);
+            //input = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
+            command = console.getActiveCommand();
+            
+            if (!command.ToUpper().Equals("STOP"))
             {
+                setMovement(command);
                 Debug.Log("A moverse");
                 StartCoroutine(move(transform));
             }
@@ -42,13 +56,10 @@ class GridMove : MonoBehaviour
         startPosition = transform.position;
         t = 0;
 
-        if (gridOrientation == Orientation.Horizontal) // Moviento 
-        {
-            endPosition = new Vector3(startPosition.x + System.Math.Sign(input.x) * gridSize, startPosition.y + System.Math.Sign(input.y) * gridSize,startPosition.z); // Establecemos el vector objetivo
-        }
-        else {
-            endPosition = new Vector3(startPosition.x + System.Math.Sign(input.x) * gridSize, startPosition.y + System.Math.Sign(input.y) * gridSize,startPosition.z);
-        }
+       
+        
+        endPosition = new Vector3(startPosition.x + System.Math.Sign(input.x) * gridSize, startPosition.y + System.Math.Sign(input.y) * gridSize, startPosition.z); // Establecemos el vector objetivo
+        
 
         factor = 1;
 
@@ -59,6 +70,7 @@ class GridMove : MonoBehaviour
             yield return null;
         }
 
+
         isMoving = false;
         yield return 0;
     }
@@ -67,5 +79,29 @@ class GridMove : MonoBehaviour
     {
         this.input = input;
 
+    }
+
+    void setMovement(string command)
+    {
+        switch (command.ToLower())
+        {
+            case "up":
+                input = new Vector2(0, 1);
+                break;
+            case "down":
+                input = new Vector2(0, -1);
+                break;
+            case "left":
+                input = new Vector2(-1, 0);
+                break;
+            case "right":
+                input = new Vector2(1, 0);
+                break;
+            case "stop":
+                input = new Vector2(0, 0);
+                break;
+            default:
+                break;
+        }
     }
 }

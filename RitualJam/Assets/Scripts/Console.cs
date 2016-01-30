@@ -9,6 +9,7 @@ public class Console : MonoBehaviour {
 	public Text promptText;
 	public GameObject player;
     public GameObject twitchListener;
+	public GameObject menuManager;
 	public int flickerTime;
 	public string prompt;
 	public bool controlRemoto;
@@ -17,6 +18,9 @@ public class Console : MonoBehaviour {
 	private int time;
 	private bool promptShown;
     private TwitchListener remoteConsole;
+
+    private Vector2 movementVector;
+    private string activeCommand;
 
 	// Use this for initialization
 	void Start () {
@@ -27,7 +31,10 @@ public class Console : MonoBehaviour {
 		consoleText_2.text = "";
 		time = 0;
 		promptShown = false;
-        remoteConsole = twitchListener.GetComponent<TwitchListener>();
+        Vector2 movementVector=new Vector2(0,0);
+        activeCommand = "stop";
+    	remoteConsole = twitchListener.GetComponent<TwitchListener>();
+		controlRemoto = menuManager.GetComponent<MenuManager>().IsStreamingModeOn();
 		if (controlRemoto) {
 			InvokeRepeating("ReadTwitchCommand", 0, 1);
 		}
@@ -57,7 +64,6 @@ public class Console : MonoBehaviour {
 						// User entered command
 						Debug.Log("User entered: " + command);
 						ExecUserCommand();
-						ManagePreviousCommands();
 						command = "";
 						consoleText.text = "";
 					} else {
@@ -76,27 +82,35 @@ public class Console : MonoBehaviour {
 	}
 
 	void ExecUserCommand () {
-		switch (command.ToLower()) {
-		case "up":
-			player.GetComponent<GridMove>().setComponents(new Vector2(0,1));
-			player.GetComponent<GridMove>().isMoving = false;
-			break;
-		case "down":
-			player.GetComponent<GridMove>().setComponents(new Vector2(0,-1));
-			player.GetComponent<GridMove>().isMoving = false;
-			break;
-		case "left":
-			player.GetComponent<GridMove>().setComponents(new Vector2(-1,0));
-			player.GetComponent<GridMove>().isMoving = false;
-			break;
-		case "right":
-			player.GetComponent<GridMove>().setComponents(new Vector2(1,0));
-			player.GetComponent<GridMove>().isMoving = false;
-			break;
-		case "stop":
-			player.GetComponent<GridMove>().setComponents(new Vector2(0,0));
-			player.GetComponent<GridMove>().isMoving = true;
-			break;
+		bool correcto;
+
+		correcto = true;
+
+         switch (command.ToLower())
+        {
+		    case "up":
+                activeCommand = command;
+            break;
+            case "down":
+                activeCommand = command;
+            break;
+            case "left":
+                activeCommand = command;
+            break;
+            case "right":
+                activeCommand = command;
+            break;
+            case "stop":
+                activeCommand = command;
+            break;
+            default:
+            correcto = false;
+                break;
+        }
+    
+		if (correcto) {
+
+			ManagePreviousCommands();
 		}
 	}
 
@@ -124,4 +138,9 @@ public class Console : MonoBehaviour {
         command = remoteConsole.getCommand();
 		ExecUserCommand();
 	}
+
+    public string getActiveCommand()
+    {
+        return activeCommand;
+    }
 }
