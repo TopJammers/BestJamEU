@@ -57,7 +57,6 @@ public class Console : MonoBehaviour {
 						// User entered command
 						Debug.Log("User entered: " + command);
 						ExecUserCommand();
-						ManagePreviousCommands();
 						command = "";
 						consoleText.text = "";
 					} else {
@@ -76,6 +75,9 @@ public class Console : MonoBehaviour {
 	}
 
 	void ExecUserCommand () {
+		bool correcto;
+
+		correcto = true;
 		switch (command.ToLower()) {
 		case "up":
 			player.GetComponent<GridMove>().setComponents(new Vector2(0,1));
@@ -97,6 +99,12 @@ public class Console : MonoBehaviour {
 			player.GetComponent<GridMove>().setComponents(new Vector2(0,0));
 			player.GetComponent<GridMove>().isMoving = true;
 			break;
+		default:
+			correcto = false;
+			break;
+		}
+		if (correcto) {
+			ManagePreviousCommands();
 		}
 	}
 
