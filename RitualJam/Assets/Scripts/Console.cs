@@ -82,19 +82,23 @@ public class Console : MonoBehaviour {
 	void ExecUserCommand () {
 		switch (command.ToLower()) {
 		case "up":
-			player.GetComponent<PlayerController>().MoveUp();
+			player.GetComponent<GridMove>().setComponents(new Vector2(0,1));
+			player.GetComponent<GridMove>().isMoving = false;
 			break;
 		case "down":
 			player.GetComponent<PlayerController>().MoveDown();
 			break;
 		case "left":
-			player.GetComponent<PlayerController>().MoveLeft();
+			player.GetComponent<GridMove>().setComponents(new Vector2(-1,0));
+			player.GetComponent<GridMove>().isMoving = false;
 			break;
 		case "right":
-			player.GetComponent<PlayerController>().MoveRight();
+			player.GetComponent<GridMove>().setComponents(new Vector2(1,0));
+			player.GetComponent<GridMove>().isMoving = false;
 			break;
 		case "stop":
-			player.GetComponent<PlayerController>().Stop();
+			player.GetComponent<GridMove>().setComponents(new Vector2(0,0));
+			player.GetComponent<GridMove>().isMoving = true;
 			break;
 		}
 	}
