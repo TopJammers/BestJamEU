@@ -1,15 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Menu_Behaviour : MonoBehaviour {
+public class MenuManager : MonoBehaviour {
 	//Attributes
 	public GameObject confirmPanel;
+	private static MenuManager instance = null;
 
 	// Use this for initialization
-	void Awake() {
-		DontDestroyOnLoad (transform.gameObject);
-	}
-
 	void Start () {
 
 	}
@@ -17,6 +14,16 @@ public class Menu_Behaviour : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 	
+	}
+
+	void Awake() {
+		//Singleton pattern
+		if (instance == null) {
+			instance = this;
+		} else if (instance != this) {
+			Destroy(gameObject);
+		}
+		DontDestroyOnLoad (gameObject);
 	}
 
 	//Public methods
