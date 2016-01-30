@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 public class MenuManager : MonoBehaviour {
 	//Attributes
 	public GameObject confirmPanel;
-	private bool streamingMode = false;
+	private static bool streamingMode = false;
 	private static MenuManager instance = null;
 
 	// Use this for initialization
