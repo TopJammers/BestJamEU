@@ -14,12 +14,7 @@ public class PlayerDeath : MonoBehaviour {
 	
 	}
 
-	public void Kill (int seconds) {
-		Invoke("KillPlayer",seconds);
-	}
-
-	void KillPlayer () {
+	public void Kill () {
 		SceneManager.LoadScene("Scene Juanca", LoadSceneMode.Single);
 	}
-
 }

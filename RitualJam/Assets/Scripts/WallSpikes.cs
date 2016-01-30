@@ -5,9 +5,10 @@ public class WallSpikes : MonoBehaviour {
 
     // Use this for initialization
 
-    public GameObject spikes;
+    //public GameObject spikes;
+	Animator anim_wall;
 	void Start () {
-	
+		anim_wall = this.GetComponent<Animator>();
 	}
 	
 	// Update is called once per frame
@@ -22,8 +23,12 @@ public class WallSpikes : MonoBehaviour {
         if(col.gameObject.tag.Equals("Player"))
         {
             Debug.Log("Player Died");
-            //col.getCompontent<PlayerDeath>().kill();
-            Instantiate(spikes,this.transform.position,this.transform.rotation);
+			anim_wall.SetBool("DeathWall",true);
+			col.gameObject.GetComponent<GridMove>().setIsDead(true);
+			col.gameObject.GetComponent<SpriteRenderer>().enabled=false;
+			//col.gameObject.GetComponent<PlayerDeath>().Kill(1);
+            //Instantiate(spikes,this.transform.position,this.transform.rotation);
+
             
         }
     }
