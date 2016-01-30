@@ -11,7 +11,7 @@ public class TwitchListener : MonoBehaviour {
     private StreamReader inputStream;
     private StreamWriter outputStream;
 
-    public enum commandList { UP,DOWN,LEFT,RIGHT}
+    public enum commandList { UP, DOWN, LEFT, RIGHT,STOP }
     private Dictionary<commandList, int> commandCount;
     string ip="irc.twitch.tv";
     int port=6667;

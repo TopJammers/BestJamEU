@@ -8,6 +8,7 @@ public class Console : MonoBehaviour {
 	public Text consoleText_2;
 	public Text promptText;
 	public GameObject player;
+    public GameObject twitchListener;
 	public int flickerTime;
 	public string prompt;
 	public bool controlRemoto;
@@ -15,6 +16,7 @@ public class Console : MonoBehaviour {
 	private string command;
 	private int time;
 	private bool promptShown;
+    private TwitchListener remoteConsole;
 
 	// Use this for initialization
 	void Start () {
@@ -25,6 +27,7 @@ public class Console : MonoBehaviour {
 		consoleText_2.text = "";
 		time = 0;
 		promptShown = false;
+        remoteConsole = twitchListener.GetComponent<TwitchListener>();
 		if (controlRemoto) {
 			InvokeRepeating("ReadTwitchCommand", 0, 1);
 		}
@@ -117,7 +120,8 @@ public class Console : MonoBehaviour {
 	}
 
 	void ReadTwitchCommand () {
-		// Leer el comando de Twitch y almacenarlo en command
+        // Leer el comando de Twitch y almacenarlo en command
+        command = remoteConsole.getCommand();
 		ExecUserCommand();
 	}
 }
