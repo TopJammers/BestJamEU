@@ -15,11 +15,10 @@ public class GroundHole : MonoBehaviour {
 
     void OnCollisionEnter2D(Collision2D col)
     {
-
         if (col.gameObject.tag.Equals("Player"))
         {
             Debug.Log("Player Died");
-            //col.getCompontent<PlayerDeath>().kill();
+			col.gameObject.GetComponent<PlayerDeath>().Kill();
 
         }
     }
