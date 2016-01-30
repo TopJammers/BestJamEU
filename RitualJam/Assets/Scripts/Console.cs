@@ -18,6 +18,9 @@ public class Console : MonoBehaviour {
 	private bool promptShown;
     private TwitchListener remoteConsole;
 
+    private Vector2 movementVector;
+    private string activeCommand;
+
 	// Use this for initialization
 	void Start () {
 		command = "";
@@ -27,7 +30,9 @@ public class Console : MonoBehaviour {
 		consoleText_2.text = "";
 		time = 0;
 		promptShown = false;
-        remoteConsole = twitchListener.GetComponent<TwitchListener>();
+        Vector2 movementVector=new Vector2(0,0);
+        activeCommand = "stop";
+    remoteConsole = twitchListener.GetComponent<TwitchListener>();
 		if (controlRemoto) {
 			InvokeRepeating("ReadTwitchCommand", 0, 1);
 		}
@@ -78,32 +83,31 @@ public class Console : MonoBehaviour {
 		bool correcto;
 
 		correcto = true;
-		switch (command.ToLower()) {
-		case "up":
-			player.GetComponent<GridMove>().setComponents(new Vector2(0,1));
-			player.GetComponent<GridMove>().isMoving = false;
-			break;
-		case "down":
-			player.GetComponent<GridMove>().setComponents(new Vector2(0,-1));
-			player.GetComponent<GridMove>().isMoving = false;
-			break;
-		case "left":
-			player.GetComponent<GridMove>().setComponents(new Vector2(-1,0));
-			player.GetComponent<GridMove>().isMoving = false;
-			break;
-		case "right":
-			player.GetComponent<GridMove>().setComponents(new Vector2(1,0));
-			player.GetComponent<GridMove>().isMoving = false;
-			break;
-		case "stop":
-			player.GetComponent<GridMove>().setComponents(new Vector2(0,0));
-			player.GetComponent<GridMove>().isMoving = true;
-			break;
-		default:
-			correcto = false;
-			break;
-		}
+
+         switch (command.ToLower())
+        {
+		    case "up":
+                activeCommand = command;
+            break;
+            case "down":
+                activeCommand = command;
+            break;
+            case "left":
+                activeCommand = command;
+            break;
+            case "right":
+                activeCommand = command;
+            break;
+            case "stop":
+                activeCommand = command;
+            break;
+            default:
+            correcto = false;
+                break;
+        }
+    
 		if (correcto) {
+
 			ManagePreviousCommands();
 		}
 	}
@@ -132,4 +136,9 @@ public class Console : MonoBehaviour {
         command = remoteConsole.getCommand();
 		ExecUserCommand();
 	}
+
+    public string getActiveCommand()
+    {
+        return activeCommand;
+    }
 }
