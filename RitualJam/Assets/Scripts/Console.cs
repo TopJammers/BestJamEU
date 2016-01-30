@@ -9,6 +9,7 @@ public class Console : MonoBehaviour {
 	public Text promptText;
 	public GameObject player;
     public GameObject twitchListener;
+	public GameObject menuManager;
 	public int flickerTime;
 	public string prompt;
 	public bool controlRemoto;
@@ -32,7 +33,8 @@ public class Console : MonoBehaviour {
 		promptShown = false;
         Vector2 movementVector=new Vector2(0,0);
         activeCommand = "stop";
-    remoteConsole = twitchListener.GetComponent<TwitchListener>();
+    	remoteConsole = twitchListener.GetComponent<TwitchListener>();
+		controlRemoto = menuManager.GetComponent<MenuManager>().IsStreamingModeOn();
 		if (controlRemoto) {
 			InvokeRepeating("ReadTwitchCommand", 0, 1);
 		}
