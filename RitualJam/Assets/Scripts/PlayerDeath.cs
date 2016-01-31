@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
-using UnityEngine.SceneManagement;
+//using UnityEngine.SceneManagement;
 
 public class PlayerDeath : MonoBehaviour {
 
@@ -14,7 +14,12 @@ public class PlayerDeath : MonoBehaviour {
 	
 	}
 
-	public void Kill () {
-		SceneManager.LoadScene("Scene Juanca", LoadSceneMode.Single);
+	public void Kill (int seconds) {
+		Invoke("KillPlayer",seconds);
 	}
+
+	void KillPlayer () {
+		/*SceneManager.LoadScene("Scene Juanca", LoadSceneMode.Single);*/
+	}
+
 }
