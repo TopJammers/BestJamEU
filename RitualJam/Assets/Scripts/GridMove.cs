@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 class GridMove : MonoBehaviour
 {
@@ -21,6 +22,7 @@ class GridMove : MonoBehaviour
     private Console console;
     private string command;
 	private bool isDead;
+    Quaternion newRotation;
 
     Animator anim_player;
     Vector2 moveDirection;
@@ -48,10 +50,38 @@ class GridMove : MonoBehaviour
 
 	            // input = new Vector2(componentA, componentB);
 	            //input = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
-	            command = console.getActiveCommand();
-	            
-	            if (!command.ToUpper().Equals("STOP"))
+                string aux= console.getActiveCommand();
+                if(aux.ToLower().Equals("exit"))
+                {
+                    Application.Quit();
+                }
+                else if(aux.ToLower().Equals("menu"))
+                {
+                    SceneManager.LoadScene("MenuScene");
+                }
+
+                    if (command.ToLower().Equals("up") && !aux.ToLower().Equals("down"))
+                {
+                    command = aux;
+                }
+                else if(command.ToLower().Equals("right") && !aux.ToLower().Equals("left"))
+                {
+                    command = aux;
+                }
+                else if (command.ToLower().Equals("left") && !aux.ToLower().Equals("right"))
+                {
+                    command = aux;
+                }
+                else if (command.ToLower().Equals("down") && !aux.ToLower().Equals("up"))
+                {
+                    command = aux;
+                }
+
+
+
+                if (!command.ToUpper().Equals("STOP"))
 	            {
+                    
 	                setMovement(command);
 	                Debug.Log("A moverse");
 	                StartCoroutine(move(transform));
@@ -99,18 +129,23 @@ class GridMove : MonoBehaviour
             case "up":
                 input = new Vector2(0, 1);
                 anim_player.SetBool("IsWalking", true);
+                anim_player.SetFloat("Direction", 0.0f);
+
                 break;
             case "down":
                 input = new Vector2(0, -1);
                 anim_player.SetBool("IsWalking", true);
+                anim_player.SetFloat("Direction", 1.0f);
                 break;
             case "left":
                 input = new Vector2(-1, 0);
                 anim_player.SetBool("IsWalking", true);
+                anim_player.SetFloat("Direction", 2.0f);
                 break;
             case "right":
                 input = new Vector2(1, 0);
                 anim_player.SetBool("IsWalking", true);
+                anim_player.SetFloat("Direction", 3.0f);
                 break;
             case "stop":
                 input = new Vector2(0, 0);
@@ -130,6 +165,11 @@ class GridMove : MonoBehaviour
     public Vector3 getObjectivePosition()
     {
         return endPosition;
+    }
+
+    public string getActiveCommand()
+    {
+        return command;
     }
 
 }

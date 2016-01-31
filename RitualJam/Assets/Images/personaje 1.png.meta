@@ -1,20 +1,30 @@
 fileFormatVersion: 2
-guid: 68a1843df51a26744a0bdab69bbeaf6d
-timeCreated: 1454213767
+guid: 94199ce3ac425a14ab5760df8ce5d950
+timeCreated: 1454221428
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: personaje_0
-    21300002: personaje_1
-    21300004: personaje_2
-    21300006: personaje_3
-    21300008: personaje_4
-    21300010: personaje_5
-    21300012: personaje_6
-    21300014: personaje_7
-    21300016: personaje_8
-    21300018: personaje_9
-    21300020: personaje_10
+    21300000: personaje 1_0
+    21300002: personaje 1_1
+    21300004: personaje 1_2
+    21300006: personaje 1_3
+    21300008: personaje 1_4
+    21300010: personaje 1_5
+    21300012: personaje 1_6
+    21300014: personaje 1_7
+    21300016: personaje 1_8
+    21300018: personaje 1_9
+    21300020: personaje 1_10
+    21300022: personaje 1_11
+    21300024: personaje 1_12
+    21300026: personaje 1_13
+    21300028: personaje 1_14
+    21300030: personaje 1_15
+    21300032: personaje 1_16
+    21300034: personaje 1_17
+    21300036: personaje 1_18
+    21300038: personaje 1_19
+    21300040: personaje 1_20
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -61,7 +71,40 @@ TextureImporter:
   buildTargetSettings: []
   spriteSheet:
     sprites:
-    - name: personaje_0
+    - name: personaje 1_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 96
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: personaje 1_1
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 96
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: personaje 1_2
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 96
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: personaje 1_3
       rect:
         serializedVersion: 2
         x: 0
@@ -72,7 +115,7 @@ TextureImporter:
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: personaje_1
+    - name: personaje 1_4
       rect:
         serializedVersion: 2
         x: 16
@@ -83,7 +126,7 @@ TextureImporter:
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: personaje_2
+    - name: personaje 1_5
       rect:
         serializedVersion: 2
         x: 32
@@ -94,7 +137,7 @@ TextureImporter:
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: personaje_3
+    - name: personaje 1_6
       rect:
         serializedVersion: 2
         x: 0
@@ -105,7 +148,7 @@ TextureImporter:
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: personaje_4
+    - name: personaje 1_7
       rect:
         serializedVersion: 2
         x: 16
@@ -116,7 +159,7 @@ TextureImporter:
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: personaje_5
+    - name: personaje 1_8
       rect:
         serializedVersion: 2
         x: 32
@@ -127,7 +170,7 @@ TextureImporter:
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: personaje_6
+    - name: personaje 1_9
       rect:
         serializedVersion: 2
         x: 0
@@ -138,7 +181,7 @@ TextureImporter:
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: personaje_7
+    - name: personaje 1_10
       rect:
         serializedVersion: 2
         x: 16
@@ -149,7 +192,7 @@ TextureImporter:
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: personaje_8
+    - name: personaje 1_11
       rect:
         serializedVersion: 2
         x: 32
@@ -160,7 +203,7 @@ TextureImporter:
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: personaje_9
+    - name: personaje 1_12
       rect:
         serializedVersion: 2
         x: 0
@@ -171,11 +214,88 @@ TextureImporter:
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: personaje_10
+    - name: personaje 1_13
       rect:
         serializedVersion: 2
         x: 16
         y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: personaje 1_14
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: personaje 1_15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: personaje 1_16
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: personaje 1_17
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: personaje 1_18
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: personaje 1_19
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: personaje 1_20
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
         width: 16
         height: 16
       alignment: 0
