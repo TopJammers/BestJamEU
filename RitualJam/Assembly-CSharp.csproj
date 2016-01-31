@@ -45,7 +45,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\OpenDoor2.cs" />
+     <Compile Include="Assets\GameStats.cs" />
      <Compile Include="Assets\Scripts\ActivableTrap.cs" />
      <Compile Include="Assets\Scripts\Boulder.cs" />
      <Compile Include="Assets\Scripts\CompleteController.cs" />
@@ -60,12 +60,14 @@
      <Compile Include="Assets\Scripts\Manager Scripts\SettingsManager.cs" />
      <Compile Include="Assets\Scripts\MovingPlatforms.cs" />
      <Compile Include="Assets\Scripts\OpenDoor.cs" />
+     <Compile Include="Assets\Scripts\OpenDoor2.cs" />
      <Compile Include="Assets\Scripts\PlayerController.cs" />
      <Compile Include="Assets\Scripts\PlayerDeath.cs" />
      <Compile Include="Assets\Scripts\SmoothCamera.cs" />
      <Compile Include="Assets\Scripts\TrapTrigger.cs" />
      <Compile Include="Assets\Scripts\TwitchListener.cs" />
      <Compile Include="Assets\Scripts\WallSpikes.cs" />
+     <Compile Include="Assets\Wall.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

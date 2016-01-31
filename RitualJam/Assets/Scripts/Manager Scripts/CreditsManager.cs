@@ -6,6 +6,7 @@ public class CreditsManager : MonoBehaviour {
 	//Attributes
 	public GameObject clickObject;
 	public GameObject hoverObject;
+	public Texture2D cursorTexture;
 
 	// Use this for initialization
 	void Start () {
@@ -15,6 +16,10 @@ public class CreditsManager : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 	
+	}
+
+	void Awake(){
+		Cursor.SetCursor (cursorTexture, CursorMode.ForceSoftware);
 	}
 
 	//Public methods

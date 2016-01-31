@@ -7,6 +7,7 @@ public class MenuManager : MonoBehaviour {
 	public GameObject confirmPanel;
 	public GameObject clickObject;
 	public GameObject hoverObject;
+	public Texture2D cursorTexture;
 	private static bool streamingMode = false;
 		
 	// Use this for initialization
@@ -16,10 +17,11 @@ public class MenuManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	
+
 	}
 
 	void Awake() {
+		Cursor.SetCursor (cursorTexture, CursorMode.ForceSoftware);
 		int musicOn = PlayerPrefs.GetInt ("MusicOn",1);
 		if (musicOn == 1) {
 			GetComponent<AudioSource> ().mute = false;

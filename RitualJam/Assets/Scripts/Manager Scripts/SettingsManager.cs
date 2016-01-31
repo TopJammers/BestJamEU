@@ -11,6 +11,7 @@ public class SettingsManager : MonoBehaviour {
 	public Toggle soundToggle;
 	public GameObject clickObject;
 	public GameObject hoverObject;
+	public Texture2D cursorTexture;
 	private bool musicOn = true;
 	private bool soundOn = true;
 	private float musicVolume;
@@ -27,6 +28,7 @@ public class SettingsManager : MonoBehaviour {
 	}
 
 	void Awake() {
+		Cursor.SetCursor (cursorTexture, CursorMode.ForceSoftware);
 		//Load settings
 		int musicOnInteger = PlayerPrefs.GetInt ("MusicOn", 1);
 		if (musicOnInteger == 0) {
