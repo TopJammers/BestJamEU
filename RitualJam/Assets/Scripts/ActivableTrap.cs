@@ -51,6 +51,10 @@ public class ActivableTrap : MonoBehaviour {
     {   
 		tramp = (GameObject)Instantiate(trap, this.transform.position, this.transform.rotation);
 		trap_anim = tramp.GetComponent<Animator>();
-		trap_anim.SetBool("Spikes",true);
+        if (trapType.Equals("Spikes"))
+        {
+            trap_anim.SetBool("Spikes", true);
+        }
+
     }
 }

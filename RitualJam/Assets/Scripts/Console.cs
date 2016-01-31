@@ -34,7 +34,7 @@ public class Console : MonoBehaviour {
         Vector2 movementVector=new Vector2(0,0);
         activeCommand = "stop";
     	remoteConsole = twitchListener.GetComponent<TwitchListener>();
-		controlRemoto = menuManager.GetComponent<MenuManager>().IsStreamingModeOn();
+		//controlRemoto = menuManager.GetComponent<MenuManager>().IsStreamingModeOn();
 		if (controlRemoto) {
 			InvokeRepeating("ReadTwitchCommand", 0, 1);
 		}

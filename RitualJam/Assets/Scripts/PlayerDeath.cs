@@ -23,6 +23,6 @@ public class PlayerDeath : MonoBehaviour {
 	}
 
 	void KillPlayer () {
-		SceneManager.LoadScene("animacionesbuenas", LoadSceneMode.Single);
+		SceneManager.LoadScene("Nivel Real", LoadSceneMode.Single);
 	}
 }

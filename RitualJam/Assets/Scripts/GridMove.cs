@@ -3,10 +3,8 @@ using UnityEngine;
 
 class GridMove : MonoBehaviour
 {
-    private float moveSpeed = 3f; // velocidad
-    private float gridSize = 1f; // Tamaño del grid
-    public float componentA;
-    public float componentB;
+    public float moveSpeed = 3f; // velocidad
+    public float gridSize = 0.5f; // Tamaño del grid
     private enum Orientation // Orientacion del grid
     {
         Horizontal,
@@ -24,11 +22,20 @@ class GridMove : MonoBehaviour
     private string command;
 	private bool isDead;
 
-    //private string inputCommand;
+    Animator anim_player;
+    Vector2 moveDirection;
+    float angle;
+
+//private string inputCommand;
 
     void Start()
     {
         console = consolePrefab.GetComponent<Console>();
+
+        anim_player =this.GetComponent<Animator>();
+
+        endPosition = new Vector3(0, 0, 0);
+
 		isDead = false;
     }
 
@@ -62,7 +69,8 @@ class GridMove : MonoBehaviour
        
         
         endPosition = new Vector3(startPosition.x + System.Math.Sign(input.x) * gridSize, startPosition.y + System.Math.Sign(input.y) * gridSize, startPosition.z); // Establecemos el vector objetivo
-        
+
+
 
         factor = 1;
 
@@ -90,25 +98,38 @@ class GridMove : MonoBehaviour
         {
             case "up":
                 input = new Vector2(0, 1);
+                anim_player.SetBool("IsWalking", true);
                 break;
             case "down":
                 input = new Vector2(0, -1);
+                anim_player.SetBool("IsWalking", true);
                 break;
             case "left":
                 input = new Vector2(-1, 0);
+                anim_player.SetBool("IsWalking", true);
                 break;
             case "right":
                 input = new Vector2(1, 0);
+                anim_player.SetBool("IsWalking", true);
                 break;
             case "stop":
                 input = new Vector2(0, 0);
+                anim_player.SetBool("IsWalking", false);
                 break;
             default:
                 break;
         }
+                
     }
 
 	public void setIsDead(bool dead) {
 		isDead = dead;
+        anim_player.SetBool("IsWalking", false);
 	}
+
+    public Vector3 getObjectivePosition()
+    {
+        return endPosition;
+    }
+
 }

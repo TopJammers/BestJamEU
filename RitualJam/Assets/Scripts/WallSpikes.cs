@@ -23,10 +23,19 @@ public class WallSpikes : MonoBehaviour {
         if(col.gameObject.tag.Equals("Player"))
         {
             Debug.Log("Player Died");
-			anim_wall.SetBool("DeathWall",true);
+            Animator anim = GetComponent<Animator>();
+            this.gameObject.GetComponent<Renderer>().enabled = true;
+            GridMove player = col.gameObject.GetComponent<GridMove>();
+            anim.transform.position = player.getObjectivePosition();
+            anim.transform.rotation = col.gameObject.transform.rotation;
+            
+
+            anim_wall.SetBool("DeathWall",true);
 			col.gameObject.GetComponent<GridMove>().setIsDead(true);
 			col.gameObject.GetComponent<SpriteRenderer>().enabled=false;
+
 			col.gameObject.GetComponent<PlayerDeath>().Kill(1, GameManager.deathTypes.Spikes);
+
             //Instantiate(spikes,this.transform.position,this.transform.rotation);
         }
     }
