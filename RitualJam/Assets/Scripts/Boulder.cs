@@ -49,7 +49,7 @@ public class Boulder : MonoBehaviour {
 			Debug.Log("Player Died");
 			col.gameObject.GetComponent<GridMove>().setIsDead(true);
 			col.gameObject.GetComponent<SpriteRenderer>().enabled=false;
-			col.gameObject.GetComponent<PlayerDeath>().Kill(1, GameStats.deathTypes.Boulder);
+			col.gameObject.GetComponent<PlayerDeath>().Kill(1, GameManager.deathTypes.Boulder);
 			//Instantiate(spikes,this.transform.position,this.transform.rotation);
 		}
 	}

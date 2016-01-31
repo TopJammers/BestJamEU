@@ -26,7 +26,7 @@ public class WallSpikes : MonoBehaviour {
 			anim_wall.SetBool("DeathWall",true);
 			col.gameObject.GetComponent<GridMove>().setIsDead(true);
 			col.gameObject.GetComponent<SpriteRenderer>().enabled=false;
-			col.gameObject.GetComponent<PlayerDeath>().Kill(1, GameStats.deathTypes.Spikes);
+			col.gameObject.GetComponent<PlayerDeath>().Kill(1, GameManager.deathTypes.Spikes);
             //Instantiate(spikes,this.transform.position,this.transform.rotation);
         }
     }

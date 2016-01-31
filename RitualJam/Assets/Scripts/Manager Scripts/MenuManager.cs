@@ -9,6 +9,7 @@ public class MenuManager : MonoBehaviour {
 	public GameObject hoverObject;
 	public Texture2D cursorTexture;
 	private static bool streamingMode = false;
+	private Vector2 cursorHotspot;
 		
 	// Use this for initialization
 	void Start () {
@@ -21,7 +22,8 @@ public class MenuManager : MonoBehaviour {
 	}
 
 	void Awake() {
-		Cursor.SetCursor (cursorTexture, CursorMode.ForceSoftware);
+		cursorHotspot = new Vector2(cursorTexture.width/2.0f, cursorTexture.height/2.0f);
+		Cursor.SetCursor (cursorTexture, cursorHotspot, CursorMode.ForceSoftware);
 		int musicOn = PlayerPrefs.GetInt ("MusicOn",1);
 		if (musicOn == 1) {
 			GetComponent<AudioSource> ().mute = false;

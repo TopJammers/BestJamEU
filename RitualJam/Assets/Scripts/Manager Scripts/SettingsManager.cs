@@ -16,6 +16,7 @@ public class SettingsManager : MonoBehaviour {
 	private bool soundOn = true;
 	private float musicVolume;
 	private float soundVolume;
+	private Vector2 cursorHotspot;
 
 	// Use this for initialization
 	void Start () {
@@ -28,7 +29,8 @@ public class SettingsManager : MonoBehaviour {
 	}
 
 	void Awake() {
-		Cursor.SetCursor (cursorTexture, CursorMode.ForceSoftware);
+		cursorHotspot = new Vector2(cursorTexture.width/2.0f, cursorTexture.height/2.0f);
+		Cursor.SetCursor (cursorTexture, cursorHotspot, CursorMode.ForceSoftware);
 		//Load settings
 		int musicOnInteger = PlayerPrefs.GetInt ("MusicOn", 1);
 		if (musicOnInteger == 0) {

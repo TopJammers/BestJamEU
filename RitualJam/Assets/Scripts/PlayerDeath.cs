@@ -5,11 +5,11 @@ using UnityEngine.SceneManagement;
 public class PlayerDeath : MonoBehaviour {
 	public GameObject gameStats;
 
-	private GameStats stats;
+	private GameManager stats;
 
 	// Use this for initialization
 	void Start () {
-		stats = gameStats.GetComponent<GameStats>();
+		stats = gameStats.GetComponent<GameManager>();
 	}
 	
 	// Update is called once per frame
@@ -17,7 +17,7 @@ public class PlayerDeath : MonoBehaviour {
 	
 	}
 
-	public void Kill (int seconds, GameStats.deathTypes dt) {
+	public void Kill (int seconds, GameManager.deathTypes dt) {
 		Invoke("KillPlayer",seconds);
 		stats.AddDeath(dt);
 	}

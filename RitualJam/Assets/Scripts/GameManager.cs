@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 
-public class GameStats : MonoBehaviour {
+public class GameManager : MonoBehaviour {
 	public enum deathTypes {Spikes, Walls, Holes, Boulder}
 
 	private static Dictionary<deathTypes, int> deathCnt;

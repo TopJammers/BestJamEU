@@ -18,7 +18,7 @@ public class GroundHole : MonoBehaviour {
         if (col.gameObject.tag.Equals("Player"))
         {
             Debug.Log("Player Died");
-			col.gameObject.GetComponent<PlayerDeath>().Kill(1, GameStats.deathTypes.Holes);
+			col.gameObject.GetComponent<PlayerDeath>().Kill(1, GameManager.deathTypes.Holes);
 
         }
     }
