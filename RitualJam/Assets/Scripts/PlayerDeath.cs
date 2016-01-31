@@ -17,16 +17,6 @@ public class PlayerDeath : MonoBehaviour {
 	
 	}
 
-<<<<<<< HEAD
-	public void Kill (int seconds) {
-		Invoke("KillPlayer",seconds);
-	}
-
-	void KillPlayer () {
-		SceneManager.LoadScene("Scene Juanca", LoadSceneMode.Single);
-	}
-
-=======
 	public void Kill (int seconds, GameStats.deathTypes dt) {
 		Invoke("KillPlayer",seconds);
 		stats.AddDeath(dt);
@@ -35,6 +25,4 @@ public class PlayerDeath : MonoBehaviour {
 	void KillPlayer () {
 		SceneManager.LoadScene("animacionesbuenas", LoadSceneMode.Single);
 	}
-
->>>>>>> 831ac228a43968f99e7731fff31902166ba2e529
 }
