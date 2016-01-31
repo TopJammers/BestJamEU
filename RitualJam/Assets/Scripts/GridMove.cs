@@ -3,10 +3,8 @@ using UnityEngine;
 
 class GridMove : MonoBehaviour
 {
-    private float moveSpeed = 3f; // velocidad
-    private float gridSize = 1f; // Tamaño del grid
-    public float componentA;
-    public float componentB;
+    public float moveSpeed = 3f; // velocidad
+    public float gridSize = 0.5f; // Tamaño del grid
     private enum Orientation // Orientacion del grid
     {
         Horizontal,
@@ -33,7 +31,11 @@ class GridMove : MonoBehaviour
     void Start()
     {
         console = consolePrefab.GetComponent<Console>();
+<<<<<<< HEAD
         anim_player =this.GetComponent<Animator>();
+=======
+        endPosition = new Vector3(0, 0, 0);
+>>>>>>> MONTAJE_DEL_NIVEL
 		isDead = false;
     }
 
@@ -124,4 +126,10 @@ class GridMove : MonoBehaviour
 		isDead = dead;
         anim_player.SetBool("IsWalking", false);
 	}
+
+    public Vector3 getObjectivePosition()
+    {
+        return endPosition;
+    }
+
 }

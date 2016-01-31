@@ -67,18 +67,23 @@
     <Compile Include="Assets\Scripts\CompleteController.cs" />
     <Compile Include="Assets\Scripts\CompletePlayerController.cs" />
     <Compile Include="Assets\Scripts\Console.cs" />
+    <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\GridMove.cs" />
     <Compile Include="Assets\Scripts\GroundHole.cs" />
     <Compile Include="Assets\Scripts\GroundSpikes.cs" />
     <Compile Include="Assets\Scripts\HealthManager.cs" />
-    <Compile Include="Assets\Scripts\Manager Scripts\AudioManager.cs" />
+    <Compile Include="Assets\Scripts\Manager Scripts\CreditsManager.cs" />
     <Compile Include="Assets\Scripts\Manager Scripts\MenuManager.cs" />
+    <Compile Include="Assets\Scripts\Manager Scripts\SettingsManager.cs" />
     <Compile Include="Assets\Scripts\MovingPlatforms.cs" />
+    <Compile Include="Assets\Scripts\OpenDoor.cs" />
+    <Compile Include="Assets\Scripts\OpenDoor2.cs" />
     <Compile Include="Assets\Scripts\PlayerController.cs" />
     <Compile Include="Assets\Scripts\PlayerDeath.cs" />
     <Compile Include="Assets\Scripts\SmoothCamera.cs" />
     <Compile Include="Assets\Scripts\TrapTrigger.cs" />
     <Compile Include="Assets\Scripts\TwitchListener.cs" />
+    <Compile Include="Assets\Scripts\Wall.cs" />
     <Compile Include="Assets\Scripts\WallSpikes.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2015\UnityVS.CSharp.targets" />
