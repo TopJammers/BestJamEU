@@ -61,7 +61,9 @@ public class MenuManager : MonoBehaviour {
 	{
 		clickObject.GetComponent<AudioSource> ().Play ();
 		clickObject.GetComponent<AudioSource> ().enabled = true;
-	}
+        SceneManager.LoadScene("Nivel Real", LoadSceneMode.Single);
+
+    }
 
 	public void OnQuitClick()
 	{

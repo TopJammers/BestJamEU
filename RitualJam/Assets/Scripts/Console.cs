@@ -35,7 +35,9 @@ public class Console : MonoBehaviour {
         Vector2 movementVector=new Vector2(0,0);
         activeCommand = "stop";
     	remoteConsole = twitchListener.GetComponent<TwitchListener>();
-		//controlRemoto = menuManager.GetComponent<SettingsManager>().IsStreamingModeOn();
+
+		controlRemoto = menuManager.GetComponent<SettingsManager>().IsStreamingModeOn();
+
 		if (controlRemoto) {
 			InvokeRepeating("ReadTwitchCommand", 0, 1);
 		}
@@ -101,6 +103,12 @@ public class Console : MonoBehaviour {
             case "right":
                 activeCommand = command;
             break;
+            case "menu":
+                activeCommand = command;
+                break;
+            case "exit":
+                activeCommand = command;
+                break;
             case "stop":
                 activeCommand = command;
             break;

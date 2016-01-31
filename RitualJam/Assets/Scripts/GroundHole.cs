@@ -3,6 +3,7 @@ using System.Collections;
 
 public class GroundHole : MonoBehaviour {
 
+
 	// Use this for initialization
 	void Start () {
 	
@@ -13,12 +14,14 @@ public class GroundHole : MonoBehaviour {
 	
 	}
 
-    void OnCollisionEnter2D(Collision2D col)
+    void OnTriggerEnter2D(Collider2D col)
     {
         if (col.gameObject.tag.Equals("Player"))
         {
             Debug.Log("Player Died");
-			col.gameObject.GetComponent<PlayerDeath>().Kill(1, GameManager.deathTypes.Holes);
+            col.gameObject.GetComponent<Animator>().SetBool("IsFalling",true);
+            col.gameObject.GetComponent<GridMove>().setIsDead(true);
+            col.gameObject.GetComponent<PlayerDeath>().Kill(2, GameManager.deathTypes.Holes);
 
         }
     }

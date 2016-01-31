@@ -62,7 +62,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\FloorSpikes.cs" />
     <Compile Include="Assets\Scripts\ActivableTrap.cs" />
+    <Compile Include="Assets\Scripts\Boulder Animation.cs" />
     <Compile Include="Assets\Scripts\Boulder.cs" />
     <Compile Include="Assets\Scripts\CompleteController.cs" />
     <Compile Include="Assets\Scripts\CompletePlayerController.cs" />
@@ -72,6 +74,7 @@
     <Compile Include="Assets\Scripts\GroundHole.cs" />
     <Compile Include="Assets\Scripts\GroundSpikes.cs" />
     <Compile Include="Assets\Scripts\HealthManager.cs" />
+    <Compile Include="Assets\Scripts\Manager Scripts\BackgroundManager.cs" />
     <Compile Include="Assets\Scripts\Manager Scripts\CreditsManager.cs" />
     <Compile Include="Assets\Scripts\Manager Scripts\MenuManager.cs" />
     <Compile Include="Assets\Scripts\Manager Scripts\SettingsManager.cs" />

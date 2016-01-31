@@ -27,7 +27,27 @@ public class WallSpikes : MonoBehaviour {
             this.gameObject.GetComponent<Renderer>().enabled = true;
             GridMove player = col.gameObject.GetComponent<GridMove>();
             anim.transform.position = player.getObjectivePosition();
-            anim.transform.rotation = col.gameObject.transform.rotation;
+            string dir = player.getActiveCommand();
+            switch (dir)
+            {
+                case "left":
+                    Debug.Log("Intento de giro");
+                    transform.eulerAngles = new Vector3(0, 0, 90);
+                    break;
+                case "right":
+                    Debug.Log("Intento de giro");
+                    transform.eulerAngles = new Vector3(0, 0, 270);
+                    break;
+                case "down":
+                    Debug.Log("Intento de giro");
+                    transform.eulerAngles = new Vector3(0, 0, 180);
+                    break;
+                default:
+                    break;
+                    
+                    
+            }
+            
             
 
             anim_wall.SetBool("DeathWall",true);
