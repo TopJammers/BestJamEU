@@ -8,7 +8,6 @@ public class MenuManager : MonoBehaviour {
 	public GameObject clickObject;
 	public GameObject hoverObject;
 	public Texture2D cursorTexture;
-	private static bool streamingMode = false;
 	private Vector2 cursorHotspot;
 		
 	// Use this for initialization
@@ -83,16 +82,6 @@ public class MenuManager : MonoBehaviour {
 		clickObject.GetComponent<AudioSource> ().Play ();
 		clickObject.GetComponent<AudioSource> ().enabled = true;
 		confirmPanel.SetActive (false);
-	}
-
-	public void OnStreamingToggleChange()
-	{
-		streamingMode = !streamingMode;
-	}
-
-	public bool IsStreamingModeOn()
-	{
-		return streamingMode;
 	}
 
 	public void OnButtonHover()

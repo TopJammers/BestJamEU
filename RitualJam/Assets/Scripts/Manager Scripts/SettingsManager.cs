@@ -17,6 +17,7 @@ public class SettingsManager : MonoBehaviour {
 	private float musicVolume;
 	private float soundVolume;
 	private Vector2 cursorHotspot;
+	private static bool streamingMode = false;
 
 	// Use this for initialization
 	void Start () {
@@ -69,6 +70,8 @@ public class SettingsManager : MonoBehaviour {
 	//Public methods
 	public void OnMusicToggleChange()
 	{
+		clickObject.GetComponent<AudioSource> ().enabled = true;
+		clickObject.GetComponent<AudioSource> ().Play ();
 		//Set the UI elements on-off
 		musicOn = !musicOn;
 		musicSlider.interactable = musicOn;
@@ -84,6 +87,8 @@ public class SettingsManager : MonoBehaviour {
 
 	public void OnSoundToggleChange()
 	{
+		clickObject.GetComponent<AudioSource> ().enabled = true;
+		clickObject.GetComponent<AudioSource> ().Play ();
 		//Set the UI elements on-off
 		soundOn = !soundOn;
 		soundSlider.interactable = soundOn;
@@ -124,6 +129,18 @@ public class SettingsManager : MonoBehaviour {
 	{
 		hoverObject.GetComponent<AudioSource> ().Play ();
 		hoverObject.GetComponent<AudioSource> ().enabled = true;
+	}
+
+	public void OnStreamingToggleChange()
+	{
+		clickObject.GetComponent<AudioSource> ().enabled = true;
+		clickObject.GetComponent<AudioSource> ().Play ();
+		streamingMode = !streamingMode;
+	}
+
+	public bool IsStreamingModeOn()
+	{
+		return streamingMode;
 	}
 
 	//Private methods
