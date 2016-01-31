@@ -31,11 +31,11 @@ class GridMove : MonoBehaviour
     void Start()
     {
         console = consolePrefab.GetComponent<Console>();
-<<<<<<< HEAD
+
         anim_player =this.GetComponent<Animator>();
-=======
+
         endPosition = new Vector3(0, 0, 0);
->>>>>>> MONTAJE_DEL_NIVEL
+
 		isDead = false;
     }
 
