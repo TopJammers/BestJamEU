@@ -3,7 +3,12 @@ using System.Collections;
 using System.Collections.Generic;
 
 public class GameManager : MonoBehaviour {
-	public enum deathTypes {Spikes, Walls, Holes, Boulder}
+	public enum deathTypes {Spikes, Walls, Holes, Boulder};
+	public GameObject wrongCommandSound;
+	public GameObject brokenWallSound;
+	public GameObject spikesSound;
+	public GameObject fallSound;
+	public GameObject openDoorSound;
 
 	private static Dictionary<deathTypes, int> deathCnt;
 	private static int cnt;
@@ -30,5 +35,25 @@ public class GameManager : MonoBehaviour {
 		foreach (deathTypes dt in deathCnt.Keys) {
 			Debug.Log(dt.ToString() + ": " + deathCnt[dt]);
 		}
+	}
+
+	public void PlayWrongCommandSound() {
+		wrongCommandSound.GetComponent<AudioSource>().Play();
+	}
+
+	public void PlayBrokenWallSound() {
+		brokenWallSound.GetComponent<AudioSource>().Play();
+	}
+
+	public void PlaySpikesSound() {
+		spikesSound.GetComponent<AudioSource>().Play();
+	}
+
+	public void PlayFallSound() {
+		fallSound.GetComponent<AudioSource>().Play();
+	}
+
+	public void PlayOpenDoorSound() {
+		openDoorSound.GetComponent<AudioSource>().Play();
 	}
 }
