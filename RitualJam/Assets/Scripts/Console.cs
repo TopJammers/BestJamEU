@@ -71,7 +71,7 @@ public class Console : MonoBehaviour {
 						if ((promptShown) && (consoleText.text.Length > 0)) {
 							consoleText.text = consoleText.text.Substring(0, consoleText.text.Length - 1);
 							consoleText.text += c;
-							consoleText.text += "_";
+							consoleText.text += "-";
 						} else {
 							consoleText.text += c;
 						}
@@ -121,7 +121,7 @@ public class Console : MonoBehaviour {
 
 	void FlickerUpdate () {
 		if (promptShown) {
-			consoleText.text += "_";
+			consoleText.text += "-";
 		} else if (consoleText.text.Length > 0) {
 			consoleText.text = consoleText.text.Substring(0, consoleText.text.Length - 1);
 		}
