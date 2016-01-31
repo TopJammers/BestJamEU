@@ -8,8 +8,6 @@ public class CreditsManager : MonoBehaviour {
 	public GameObject hoverObject;
 	public Texture2D cursorTexture;
 
-	private Vector2 cursorHotspot;
-
 	// Use this for initialization
 	void Start () {
 	
@@ -21,7 +19,7 @@ public class CreditsManager : MonoBehaviour {
 	}
 
 	void Awake(){
-		cursorHotspot = new Vector2(cursorTexture.width/2.0f, cursorTexture.height/2.0f);
+		Vector2 cursorHotspot = new Vector2(cursorTexture.width/2.0f, 2f);
 		Cursor.SetCursor (cursorTexture, cursorHotspot, CursorMode.ForceSoftware);
 	}
 
