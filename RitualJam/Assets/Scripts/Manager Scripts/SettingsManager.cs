@@ -30,7 +30,7 @@ public class SettingsManager : MonoBehaviour {
 	}
 
 	void Awake() {
-		cursorHotspot = new Vector2(cursorTexture.width/2.0f, 2f);
+		cursorHotspot = new Vector2(cursorTexture.width/3.0f, 2f);
 		Cursor.SetCursor (cursorTexture, cursorHotspot, CursorMode.ForceSoftware);
 		//Load settings
 		int musicOnInteger = PlayerPrefs.GetInt ("MusicOn", 1);

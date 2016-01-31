@@ -21,7 +21,7 @@ public class MenuManager : MonoBehaviour {
 	}
 
 	void Awake() {
-		cursorHotspot = new Vector2(cursorTexture.width/2.0f, 2f);
+		cursorHotspot = new Vector2(cursorTexture.width/3.0f, 2f);
 		Cursor.SetCursor (cursorTexture, cursorHotspot, CursorMode.ForceSoftware);
 		int musicOn = PlayerPrefs.GetInt ("MusicOn",1);
 		if (musicOn == 1) {
