@@ -10,6 +10,7 @@ public class Console : MonoBehaviour {
 	public GameObject player;
     public GameObject twitchListener;
 	public GameObject menuManager;
+	public GameObject gameManager;
 	public int flickerTime;
 	public string prompt;
 	public bool controlRemoto;
@@ -34,7 +35,7 @@ public class Console : MonoBehaviour {
         Vector2 movementVector=new Vector2(0,0);
         activeCommand = "stop";
     	remoteConsole = twitchListener.GetComponent<TwitchListener>();
-		//controlRemoto = menuManager.GetComponent<MenuManager>().IsStreamingModeOn();
+		//controlRemoto = menuManager.GetComponent<SettingsManager>().IsStreamingModeOn();
 		if (controlRemoto) {
 			InvokeRepeating("ReadTwitchCommand", 0, 1);
 		}
@@ -104,12 +105,12 @@ public class Console : MonoBehaviour {
                 activeCommand = command;
             break;
             default:
-            correcto = false;
+            	correcto = false;
+				gameManager.GetComponent<GameManager>().PlayWrongCommandSound();
                 break;
         }
     
 		if (correcto) {
-
 			ManagePreviousCommands();
 		}
 	}
