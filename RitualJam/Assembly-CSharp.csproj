@@ -46,6 +46,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\ActivableTrap.cs" />
+     <Compile Include="Assets\Scripts\Boulder Animation.cs" />
      <Compile Include="Assets\Scripts\Boulder.cs" />
      <Compile Include="Assets\Scripts\CompleteController.cs" />
      <Compile Include="Assets\Scripts\CompletePlayerController.cs" />
